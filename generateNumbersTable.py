@@ -1,5 +1,8 @@
 import requests
 import lxml.html as lh
+from openpyxl import Workbook
+
+
 
 
 def getBookDetails(bookNum):
@@ -12,6 +15,23 @@ def getBookDetails(bookNum):
     numOfPsukim = int(rows[3].text_content().split()[-1])
     return bookName, numOfPsukim
 
-for book in range(1,40):
+
+def putInExcel(num, name, psukim):
+    sheet[f'A{num+1}'] = num
+    sheet[f'B{num+1}'] = name
+    sheet[f'C{num+1}'] = psukim
+
+
+workbook = Workbook()
+sheet = workbook.active
+sheet['A1'] = 'מס"ד'
+sheet['B1'] = 'ספר'
+sheet['C1'] = 'מספר פסוקים'
+
+
+for book in range(1, 40):
     name, psukim = getBookDetails(book)
     print(f'{name}\t{psukim}')
+    putInExcel(book, name, psukim)
+
+workbook.save(filename="biblePsukim.xlsx")
