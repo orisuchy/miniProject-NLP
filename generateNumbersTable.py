@@ -3,8 +3,6 @@ import lxml.html as lh
 from openpyxl import Workbook
 
 
-
-
 def getBookDetails(bookNum):
     bookURL = "https://www.mgketer.org/tanach/" + str(bookNum)
     bookPage = requests.get(bookURL)
