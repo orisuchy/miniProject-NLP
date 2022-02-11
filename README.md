@@ -24,6 +24,6 @@
 * תיוג ידני של הדוגמאות Ach.csv 
 * קוד ליצירת וקטורים של פי׳צרים vectors.ipynb
 * סקריפט למסווגים weka.ipynb
-* על מנת להריץ דרוש להתקין Weka מתוך הקישור https://waikato.github.io/weka-wiki/
+  * על מנת להריץ דרוש להתקין Weka מתוך הקישור https://waikato.github.io/weka-wiki/
 
 קריאה מהנה. 
